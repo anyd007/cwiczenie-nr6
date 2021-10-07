@@ -11,30 +11,17 @@ const facts = [
 	'Chińczycy w ciągu roku zużywają około 80 miliardów pałeczek.',
 	'Żeby wejść na Wieżę Eiffla trzeba pokonać aż 1710 stopni.'
 ]
-const date = new Date();
-const day = date.getDay();
-switch(day){
-	case 1:
-		currentDay.textContent = 'poniedziałek'
-		break;
-	case 2:
-		currentDay.textContent = 'wtorek'
-		break;
-	case 3:
-		currentDay.textContent = 'środa'
-		break;
-	case 4:
-		currentDay.textContent = 'czwartek'
-		break;
-	case 5:
-		currentDay.textContent = 'piątek'
-		break;	
-	case 6:
-	currentDay.textContent = 'sobota'
-	break;	
-	default:
-		currentDay.textContent = 'niedziela'
+const dateN = new Date()
+const dayN = dateN.getDay()
 
+let weekday = dateN.toLocaleString("pl", { weekday: "long" })
+	currentDay.textContent = weekday
+
+const seeFunny = () =>{
+const funny = Math.floor(Math.random() *(facts.length -1));
+funFact.textContent = facts[funny];
 }
+seeFunny();
+
 
 
